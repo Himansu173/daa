@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download Google Drive File</title>
+  <script>
+    function downloadFile() {
+      const fileId = "1MlyrcWmEnbA0sXshSH3nX2p1LfDi7Hf1"; // Google Drive file ID
+      const downloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
+      
+      // Create an anchor tag to initiate download
+      const a = document.createElement('a');
+      a.href = downloadUrl;
+      a.target = '_blank'; // Open in a new tab
+      a.download = 'downloaded_file.c'; // Optional: Set the default download file name
+      document.body.appendChild(a);
+      a.click(); // Simulate the click to start download
+      document.body.removeChild(a); // Clean up the DOM
+    }
+  </script>
+</head>
+<body>
+  <h1>Download .c File from Google Drive</h1>
+  <button onclick="downloadFile()">Download File</button>
+</body>
+</html>
